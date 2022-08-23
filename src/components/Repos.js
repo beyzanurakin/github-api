@@ -29,6 +29,7 @@ const Repos = () => {
     <section className='section'>
       <Wrapper className='section-center'>
         <Pie3D data={languages} />
+        <Doughnut2D data={languages} />
       </Wrapper>
     </section>
   )
