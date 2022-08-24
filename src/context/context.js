@@ -6,7 +6,7 @@ import axios from 'axios'
 
 const rootUrl = 'https://api.github.com'
 
-const GithubContext = React.createContext()
+const GithubContext = createContext()
 
 //Provider Consumer - GithubContext.Provider
 

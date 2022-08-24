@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { MdBusiness, MdLocationOn, MdLink } from 'react-icons/md'
 import { GithubContext } from '../context/context'
 
 function Card() {
-  const { githubUser } = React.useContext(GithubContext)
+  const { githubUser } = useContext(GithubContext)
   const {
     avatar_url,
     html_url,

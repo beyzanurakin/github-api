@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { GithubContext } from '../context/context'
 import { GoRepo, GoGist } from 'react-icons/go'
 import { FiUsers, FiUserPlus } from 'react-icons/fi'
 
 function Info() {
-  const { githubUser } = React.useContext(GithubContext)
+  const { githubUser } = useContext(GithubContext)
   const { public_repos, followers, following, public_gists } = githubUser
 
   const items = [
