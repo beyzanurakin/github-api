@@ -42,7 +42,7 @@ const Repos = () => {
     (total, item) => {
       const { stargazers_count, name, forks } = item
       total.stars[stargazers_count] = { label: name, value: stargazers_count }
-      //total.forks[forks] = { label: name, value: forks }
+      total.forks[forks] = { label: name, value: forks }
       return total
       //
     },
@@ -53,7 +53,7 @@ const Repos = () => {
   )
   //not the best way to do it
   stars = Object.values(stars).slice(-5).reverse()
-  //forks = Object.values(forks).slice(-5).reverse()
+  forks = Object.values(forks).slice(-5).reverse()
 
   return (
     <section className='section'>
@@ -61,7 +61,7 @@ const Repos = () => {
         <Pie3D data={mostUsed} />
         <Column3D data={stars} />
         <Doughnut2D data={mostPopular} />
-        {/* <Bar3D data={forks} /> */}
+        <Bar3D data={forks} />
       </Wrapper>
     </section>
   )
