@@ -5,11 +5,13 @@ import { GithubContext } from '../context/context'
 const Search = () => {
   const [user, setUser] = useState('')
 
-  const { requests, error } = useContext(GithubContext)
+  const { requests, error, searchGithubUser } = useContext(GithubContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    //
+    if (user) {
+      searchGithubUser(user)
+    }
   }
   return (
     <section className='section'>
