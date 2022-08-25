@@ -1,18 +1,24 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { MdSearch } from 'react-icons/md'
 import { GithubContext } from '../context/context'
 const Search = () => {
   const [user, setUser] = useState('')
+
+  const { requests, error } = useContext(GithubContext)
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (user) {
-    }
     //
   }
   return (
     <section className='section'>
       <Wrapper className='section-center'>
+        {error.show && (
+          <ErrorWrapper>
+            <p>{error.msg}</p>
+          </ErrorWrapper>
+        )}
         <form onSubmit={handleSubmit}>
           <div className='form-control'>
             <MdSearch />
@@ -25,7 +31,7 @@ const Search = () => {
             <button type='submit'>search</button>
           </div>
         </form>
-        <h3>request: 60/60</h3>
+        <h3>request: {requests} /60</h3>
       </Wrapper>
     </section>
   )
