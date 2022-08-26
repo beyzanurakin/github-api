@@ -5,9 +5,3 @@ import PrivateRoute from './PrivateRoute'
 import Error from './Error'
 
 export { Dashboard, Login, AuthWrapper, PrivateRoute, Error }
-
-function index() {
-  return <div>index</div>
-}
-
-export default index
